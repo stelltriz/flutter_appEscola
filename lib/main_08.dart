@@ -16,8 +16,18 @@ class Projeto01AppState extends State<Projeto01App>{ // extendes pq e a classe p
 
   String texto = 'Construindo App da Turma';
   String localSensor = ''; //armazena o texto do sensor
+  String tipo = ''; //armazena o texto do sensor
 
   final TextEditingController _controller = TextEditingController();
+  final TextEditingController _tipoController = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _tipoController.dispose();
+
+    super.dispose();
+  }
 
   //constrtuor da claase , sempre vai estanciar aqui ou seja , sempre vai execuatr esse metodo primeiro
   //seta como esses parametros em que se comportar e mapear os vaores
@@ -47,6 +57,7 @@ class Projeto01AppState extends State<Projeto01App>{ // extendes pq e a classe p
             child: TextField(
               controller: _controller, //controlador para capturar o texto
               decoration: InputDecoration(
+                labelText: 'Local do Sensor',
                 border: OutlineInputBorder()
               ),
               maxLength: 20, //limite de caractéres para digitação
@@ -57,14 +68,37 @@ class Projeto01AppState extends State<Projeto01App>{ // extendes pq e a classe p
           
           ),
 
+          SizedBox(height: 20),
+
+          //aqui vamos inserir a caixa de texto de input Local do Sensor
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0), //espaço lateral
+            child: TextField(
+              controller: _tipoController, //controlador para capturar o texto
+              decoration: InputDecoration(
+                labelText: 'Tipo do Sensor',
+                border: OutlineInputBorder()
+              ),
+              maxLength: 20, //limite de caractéres para digitação
+              onChanged: (value) {
+                tipo = value; //atualiza a variável ao digitar
+              },
+            ),
+          
+          ),
+
+          SizedBox(height: 20),
+
           ElevatedButton(
             onPressed: () {
               setState(() {
-                texto = localSensor.isNotEmpty ? 'Local do Sensor : $localSensor' //atualiza o texto com o local do sensor
+                texto = localSensor.isNotEmpty ? 'Local do Sensor : $localSensor\n' //atualiza o texto com o local do sensor
+                'Tipo: $tipo\n'
                 : 'Por favor, insira um local do sensor'; //mensagem 
               });//atualiza o texto ao clicar no botão
 
               _controller.clear(); //limpar o input
+              _tipoController.clear();
 
             },//Adicionaremos uma funcao de botao aqui
             style: ElevatedButton.styleFrom(
