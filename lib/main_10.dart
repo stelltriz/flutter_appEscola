@@ -58,7 +58,7 @@ class Projeto01AppState extends State<Projeto01App>{ // extendes pq e a classe p
         title: const Text("App da Turma A", style: TextStyle(color: Colors.white),),
         backgroundColor: Color.fromARGB(255,64,60,134),
       ) ,
-      body: Center (
+      body: SingleChildScrollView (
         child:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children:  [
