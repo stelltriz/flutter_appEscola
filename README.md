@@ -1,16 +1,12 @@
-# newproject
+## 🌡️ School Sensor Monitoring App
+A mobile app built with Flutter to monitor temperature sensors in schools.
+Displays real-time temperature readings and sends alerts when thresholds are exceeded.
 
-A new Flutter project.
+### 🧰 Technologies Used
+- Flutter
+- Dart
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🎯 Features
+- Real-time temperature monitoring
+- Alert notifications when temperature exceeds limits
+- Simple and intuitive mobile interface
